@@ -1,0 +1,31 @@
+main aside{
+    grid-column: 9/13;
+    display: flex;
+    padding-right: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-height: 410px;
+}
+
+aside>h2{
+    color: #134880;
+    font-family: 'Source Sans 3', sans-serif;                                      
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.2px;
+}
+
+aside>p{
+    color: #484A4C;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: -0.2px;
+}
+
