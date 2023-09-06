@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap');
+
 main aside{
     grid-column: 9/13;
     display: flex;
@@ -11,7 +13,7 @@ main aside{
 
 aside>h2{
     color: #134880;
-    font-family: 'Source Sans 3', sans-serif;                                      
+    font-family: 'Source Sans 3', sans-serif;                                     
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
