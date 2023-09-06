@@ -32,8 +32,8 @@ backButton.addEventListener("click", () => {
     previousBottomSliderIndex = currentBottomSliderIndex;
     currentBottomSliderIndex = (currentBottomSliderIndex + 1) % numberOfBottomSliderImages;
 
-    moveLeft(topSliderImages, previousTopSliderIndex, sliderTop);
-    moveLeft(bottomSliderImages, previousBottomSliderIndex, sliderBottom);
+    scrollLeft(topSliderImages, previousTopSliderIndex, sliderTop);
+    scrollLeft(bottomSliderImages, previousBottomSliderIndex, sliderBottom);
 
 });
 
@@ -53,7 +53,7 @@ function scrollRight(sliderImages, currentIndex, slider){
     }, removeTimeout);
 }
 
-function moveLeft(sliderImages, previousIndex, slider){
+function scrollLeft(sliderImages, previousIndex, slider){
     sliderImages.forEach(img => img.classList.add("sliding-transition"));
     sliderImages.forEach(img => img.style.transform = `translateX(${sliderImages[previousIndex].clientWidth + sliderGapSize}px)`);
   
