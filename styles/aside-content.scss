@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap');
+
+$primary-text-color: #484A4C;
+$title-text-color: #134880;
+
+@mixin text($color: $primary-text-color, $fontsize: 18px, $fontstyle: normal, $fontweight: 400, $lineheight: normal){
+    margin: 0;
+    color: $color;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: $fontsize;
+    font-style: $fontstyle;
+    font-weight: $fontweight;
+    line-height: $lineheight;
+    letter-spacing: -0.2px;
+}
+
+@mixin text-content{
+    >h2{
+        @include text($title-text-color, 32px, $fontweight: 700,)
+    }
+    >p{
+        @include text($lineheight: 26px)
+    }
+}
+
+main aside{
+    grid-column: 9/13;
+    max-height: 410px;
+    width: 301px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 20px;
+    @include text-content;
+}
+
+
+

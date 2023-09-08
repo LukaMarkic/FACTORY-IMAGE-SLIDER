@@ -1,0 +1,63 @@
+@mixin sliding-transition{
+    img.sliding-transition {
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
+@mixin fade-in-animation{
+    img.fade-in-animation{
+        opacity: 1;
+        animation-name: fadeInAnimation;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 2s;
+    }
+}
+
+@mixin slider-image{
+    >img{
+        height: 200px;
+        border-radius: 5px; 
+    }
+}
+
+@mixin grid-position($columnstart, $columend, $row: auto){
+    grid-column-start: $columnstart;
+    grid-column-end: $columend;
+    grid-row: $row;
+}
+
+main section{
+    @include grid-position(1, 9);
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: 10px;
+    margin-left: -100%;
+}
+
+.slider-top-row, .slider-bottom-row{
+    display: flex;
+    gap: 10px;
+    flex-direction: row-reverse;
+    overflow-x: hidden;
+    @include sliding-transition;
+    @include fade-in-animation;
+    @include slider-image;
+}
+
+.slider-top-row{
+    @include grid-position(1, 9, 1);
+}
+
+.slider-bottom-row{
+    @include grid-position(1, 7, 2);
+}
+
+@keyframes fadeInAnimation{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

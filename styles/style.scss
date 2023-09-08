@@ -1,0 +1,94 @@
+$primary-text-color: #FFF;
+$primary-background-color: #DDDDDD;
+$box-border-radius: 0px, 0px, 5px, 5px;
+$content-container-max-width: 940px;
+
+@mixin text($color: $primary-text-color, $fontfamily: HelveticaNeue, $fontsize: 15px, $fontstyle: normal, $fontweight: 700, $lineheight: normal){
+    margin: 0;
+    color: $color;
+    font-family: $fontfamily;
+    font-size: $fontsize;
+    font-style: $fontstyle;
+    font-weight: $fontweight;
+    line-height: $lineheight;
+}
+
+@mixin flex-disply($direction: column, $alignitems: center, $justifycontent: space-between, $gap: 0){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $alignitems;
+    justify-content: $justifycontent;
+    gap: $gap;
+}
+
+body{
+    margin: 0;
+    @include flex-disply($gap: 10px );
+}
+
+.header-box-right h1{
+    @include text();
+    margin-left: 80px;
+}
+
+footer>h1{
+    @include text();
+    margin-left: 80px;
+}
+
+.grid-12-display{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;  
+}
+
+.content-contianer{
+    @include flex-disply($alignitems: auto , $gap: 10px);
+    min-height: 100vh;
+    max-width: $content-container-max-width;
+    position: relative;
+}
+
+header{
+    height: 100px;
+}
+
+header>div{
+    background: $primary-background-color;
+}
+
+.header-box-left{
+    grid-column: 1/5;
+    border-radius: $box-border-radius;
+}
+
+.header-box-right{
+    grid-column: 5/13;
+    border-radius: $box-border-radius;
+    @include flex-disply(row, $justifycontent: start);
+}
+
+footer{
+    height: 100px;
+    background: $primary-background-color;
+    border-radius: $box-border-radius;
+    @include flex-disply(row, $justifycontent: start);
+}
+
+@media screen and (max-width: 674px) {
+    main{
+        margin: 2em 0;
+    }
+
+    main section{
+        grid-column: 1/13;
+        grid-row: 1;
+        margin-right: 1em;
+    }
+
+    main aside{
+        grid-column: 1/13;
+        grid-row: 2;
+        margin: 0 1em;
+    }
+}

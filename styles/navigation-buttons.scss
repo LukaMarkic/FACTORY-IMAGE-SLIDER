@@ -1,0 +1,75 @@
+$primary-background-color: white;
+$primary-border-color: #134880;
+$secondary-border-color: #DDDDDD;
+
+@mixin flex-disply($direction: column, $alignitems: center, $justifycontent: space-between, $gap: 0){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $alignitems;
+    justify-content: $justifycontent;
+    gap: $gap;
+}
+
+@mixin left-button{
+    #nav-button-left{
+        .nav-button-left-gray{
+            display: none;  
+        }
+        .nav-button-left-blue{
+            display: block; 
+        }
+    }
+    #nav-button-left:hover{
+        .nav-button-left-gray{
+            display: block;
+        }
+        .nav-button-left-blue{
+            display: none;
+        }
+    }
+}
+
+@mixin right-button{
+    #nav-button-right{
+        .nav-button-right-gray{
+            display: none;
+        }
+        .nav-button-right-blue{
+            display: block;
+        }
+    }
+    #nav-button-right:hover{
+        .nav-button-right-gray{
+            display: block;
+        }
+        .nav-button-right-blue{
+            display: none;
+        }
+    }
+}
+
+.navigation-button-container{
+    grid-column: 8/9;
+    width: 60px;
+    @include flex-disply($alignitems: start, $justifycontent: start, $gap: 10px);
+}
+
+.navigation-button-container>button{
+    border: 1px solid $primary-border-color;
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    background-color: $primary-background-color;
+    @include flex-disply($direction: row, $justifycontent: center);
+}
+
+.navigation-button-container>button:hover{
+    transition: 400ms;
+    border: 1px solid $secondary-border-color;
+    cursor: pointer;
+}
+
+@include left-button;
+
+@include right-button;
