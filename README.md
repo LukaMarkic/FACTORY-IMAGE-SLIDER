@@ -6,4 +6,4 @@ Ovaj projekt predstavlja slider slika koji se mogu pomicati u lijevo ili desno o
 
 ## Implementacija
 
-Za rješavanje ovog zadatka korištena je HTML tehnologija za prikaz elemenata u prozoru preglednika i CSS tehnologija za stilsko uređivanje. Za implementaciju funkcionalnosti slidera korišten je skriptni jezik JavaScript.
+Za rješavanje ovog zadatka korištena je HTML tehnologija za prikaz elemenata u prozoru preglednika, CSS i SCSS tehnologija za stilsko uređivanje. Za implementaciju funkcionalnosti slidera korišteni je jQuery i JavaScript.
