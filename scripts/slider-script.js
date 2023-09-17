@@ -19,7 +19,7 @@ $(document).ready(function() {
         previousTopSliderIndex = currentTopSliderIndex;
         currentTopSliderIndex = (currentTopSliderIndex + 1) % numberOfTopSliderImages;
         previousBottomSliderIndex = currentBottomSliderIndex;
-        currentBottomSliderIndex = (currentBottomSliderIndex - 1 + numberOfBottomSliderImages) % numberOfBottomSliderImages;
+        currentBottomSliderIndex = (currentBottomSliderIndex + 1) % numberOfBottomSliderImages;
   
         scrollRight(topSliderImages, previousTopSliderIndex, sliderTop);
         scrollRight(bottomSliderImages, previousBottomSliderIndex, sliderBottom);
@@ -29,7 +29,7 @@ $(document).ready(function() {
         previousTopSliderIndex = currentTopSliderIndex;
         currentTopSliderIndex = (currentTopSliderIndex - 1 + numberOfTopSliderImages) % numberOfTopSliderImages;
         previousBottomSliderIndex = currentBottomSliderIndex;
-        currentBottomSliderIndex = (currentBottomSliderIndex + 1) % numberOfBottomSliderImages;
+        currentBottomSliderIndex = (currentBottomSliderIndex - 1 + numberOfBottomSliderImages) % numberOfBottomSliderImages;
   
         scrollLeft(topSliderImages, currentTopSliderIndex, sliderTop);
         scrollLeft(bottomSliderImages, currentBottomSliderIndex, sliderBottom);
